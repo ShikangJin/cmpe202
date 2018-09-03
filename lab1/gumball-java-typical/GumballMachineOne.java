@@ -11,10 +11,19 @@ public class GumballMachineOne implements GumballMachine {
 
     public void insertQuarter(int coin)
     {
-        if ( coin == 25 )
+        if ( coin == 25 ) 
+        {
+            if (this.has_quarter) 
+            {
+                System.out.println("You already insert 25 cents, turn crank and get gumball");
+                return;
+            } 
             this.has_quarter = true ;
+        }  
         else 
-            this.has_quarter = false ;
+        {
+            System.out.println( "Accept quarter only." );
+        }
     }
     
     public void turnCrank()

@@ -11,13 +11,24 @@ public class GumballMachineTwo implements GumballMachine {
 
     public void insertQuarter(int coin)
     {
-        if ( coin == 25 )
+        if ( coin == 25 ) 
+        {
+            if (quarters == 2) 
+            {
+                System.out.println( "You already inserted 50 cents, turn crank and get gumball." );
+                return;
+            }
             this.quarters++ ;
+        } else
+        {
+            System.out.println( "Accept quarter only." );
+        }
+
     }
     
     public void turnCrank()
     {
-        if ( this.quarters >= 2 )
+        if ( this.quarters == 2 )
         {
             if ( this.num_gumballs > 0 )
             {
@@ -32,9 +43,11 @@ public class GumballMachineTwo implements GumballMachine {
         }
         else 
         {
-            if (quarters == 0) {
+            if ( this.quarters == 0 ) 
+            {
                 System.out.println( "Please insert two quarters" ) ;
-            } else {
+            } else 
+            {
                 System.out.println( "Please insert one more quarter" ) ;
             }
             

@@ -11,6 +11,11 @@ public class GumballMachineThree implements GumballMachine {
 
     public void insertQuarter(int coin)
     {
+        if (coin >= 50) 
+        {
+            System.out.println( "You already inserted 50 cents, turn crank and get gumball." );
+            return;
+        }
         totalCoins += coin;
     }
     

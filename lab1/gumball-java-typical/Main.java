@@ -6,7 +6,7 @@ public class Main {
 		// index 0 : costs 25 cents, only accepts quarters 
 		// index 1 : costs 50 cents, accepts two quarters
 		// index 2 : costs 50 cents, accepts all coins
-		GumballMachine gumballMachine = GumballMachineFactory.createGumballMachine(0);
+		GumballMachine gumballMachine = GumballMachineFactory.createGumballMachine(1);
 
 		if (gumballMachine == null) {
 			System.out.println("Error: invalid gumball machine type");
@@ -15,6 +15,8 @@ public class Main {
 
 		System.out.println(gumballMachine);
 
+		gumballMachine.insertQuarter( 25 );
+		gumballMachine.insertQuarter( 25 );
 		gumballMachine.insertQuarter( 25 );
 		gumballMachine.turnCrank();
 
