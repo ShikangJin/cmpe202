@@ -1,13 +1,14 @@
 public class GumballMachineFactory {
-	public static GumballMachine createGumballMachine(int type) {
+	public static GumballMachine createGumballMachine(int type, int numberGumballs) {
 		switch(type) {
+			default:
+				return new GumballMachineOne(numberGumballs);
 			case 0:
-				return new GumballMachineOne(5);
+				return new GumballMachineOne(numberGumballs);
 			case 1:
-				return new GumballMachineTwo(5);
+				return new GumballMachineTwo(numberGumballs);
 			case 2:
-				return new GumballMachineThree(5);
+				return new GumballMachineThree(numberGumballs);
 		}
-		return null;
 	}
 }

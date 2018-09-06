@@ -1,4 +1,3 @@
-
 public class GumballMachine {
  
 	State soldOutState;
@@ -10,9 +9,9 @@ public class GumballMachine {
 	private int count = 0, totalCoin = 0, cost;
 	private boolean quarterReq;
  	
-
  	/*
 		@type: input an index to choose a gumball machine to create
+				defualt: create gumball machine costs 25 cents and taks quarter only
 				0: create gumball machine costs 25 cents and takes quarter only
 				1: create gumball machine costs 50 cents and takes quarters only
 				2: create gumball machine costs 50 cents and takes any coin
@@ -24,12 +23,16 @@ public class GumballMachine {
 		hasCoinState = new HasCoinState(this);
 		soldState = new SoldState(this);
 
-		this.count = numberGumballs;
+		count = numberGumballs;
  		if (numberGumballs > 0) {
 			state = noCoinState;
 		} 
 
 		switch(type) {
+			default:
+				cost = 25;
+				quarterReq = true;
+				break;
 			case 0:
 				cost = 25;
 				quarterReq = true;
@@ -76,8 +79,9 @@ public class GumballMachine {
 		turn the crank to get gumball
 	*/
 	public void turnCrank() {
+		State prevState = state;
 		state.turnCrank();
-		if (state == soldState) {
+		if (prevState == hasCoinState && state == soldState) {
 			totalCoin -= cost;
 		}
 		state.dispense();
