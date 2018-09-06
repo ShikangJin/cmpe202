@@ -1,5 +1,5 @@
 
-public abstract interface GumballMachine
+public interface GumballMachine
 {
     public void insertQuarter(int coin);
     
