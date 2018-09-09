@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=HasCoinState
+comment0.text=\n\tPlease\ read\ State\ interface\ for\ methods\ explanation\n
+comment1.params=gumballMachine
+comment1.target=HasCoinState(GumballMachine)
+comment2.params=coin
+comment2.target=void\ insertCoin(int)
+comment2.text=\n\t\tinserting\ a\ coin\ does\ not\ change\ current\ state\n
+comment3.params=
+comment3.target=void\ ejectCoin()
+comment3.text=\n\t\tejecting\ coin\ changes\ state\ to\ noCoinState\n
+comment4.params=
+comment4.target=void\ turnCrank()
+comment4.text=\n\t\tturning\ crank\ changes\ state\ to\ soldState\ if\ the\ amount\ of\ coin\ in\ machine\ reaches\ the\ requirement\ \n
+comment5.params=
+comment5.target=void\ dispense()
+comment5.text=\n\t\tdespensing\ gumball\ does\ not\ work\ in\ current\ state\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\n\t\tprint\ message\ for\ this\ state\n
+numComments=7

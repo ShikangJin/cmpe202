@@ -12,7 +12,7 @@ public class Main {
 			@numberGumballs: the initial gumballs in machine
 		*/
 
-		GumballMachine gumballMachine = GumballMachineFactory.createGumballMachine(3, 5);
+		GumballMachine gumballMachine = GumballMachineFactory.createGumballMachine(2, 5);
 
 		if (gumballMachine == null) {
 			System.out.println("Error: invalid gumball machine type");
