@@ -3,6 +3,7 @@ I used observer pattern to design the waitlist system of Din Tai Fung Restaurant
 The observer pattern defines Restaurant class as the child of ConcreteSubject Class, which implements Subject interface, and defines Guest class as the child of ConcreteObserver Class, which implements Observer interface.
 
 Simple workflow:
+	
 	1. When a new guest group comes, the application creates a Guest object, sets name, phone number, and group size for this object.
 	
 	2. Asks Restaurant object to add this Guest object into Guest list.
