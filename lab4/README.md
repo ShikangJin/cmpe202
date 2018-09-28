@@ -1,7 +1,9 @@
-I used observer pattern to design the waitlist system of Din Tai Fung Restaurant. 
+I use observer pattern to design the waitlist system of Din Tai Fung Restaurant. I choose observer pattern since this system matches behavior design pattern, and observer pattern here matches this circumstance properly. In the real world, restaurant always notifies wating guests that there is an empty table, and this is what observer pattern does.
 
 The observer pattern defines Restaurant class as the child of ConcreteSubject Class, which implements Subject interface, and defines Guest class as the child of ConcreteObserver Class, which implements Observer interface.
 
+CRC Card (I attached CRC Card image in the folder) 
+	
 Simple workflow:
 	
 	1. When a new guest group comes, the application creates a Guest object, sets name, phone number, and group size for this object.
