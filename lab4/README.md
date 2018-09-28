@@ -5,27 +5,27 @@ The observer pattern defines Restaurant class as the child of ConcreteSubject Cl
 CRC Card (I attached CRC Card image in the folder) :
 
 Class: Guest <br />
-Responsibilities: 
-	1. Gets name, phone number, and group size of guest
-	2. Receives the notification from Restaurant, and see if there is an available table 
-	3. Sends message to guest and asks Restaurant to add guest into waitingCallBack list
+Responsibilities:  <br />
+	1. Gets name, phone number, and group size of guest  <br />
+	2. Receives the notification from Restaurant, and see if there is an available table   <br />
+	3. Sends message to guest and asks Restaurant to add guest into waitingCallBack list  <br />
 	4. Receives callback and tells Restaurant result <br />
-Collaborators: Restaurant
+Collaborators: Restaurant 
 
 Class: Restaurant <br />
-Responsibilities: 
-	1. Maintains a guest list
-	2. Maintains an available table list and a using table list 
-	3. Searches and provides available table id according to guest group size
-	4. Notifies all guests when a table is released
-	5. Puts guests into a waitingCallBack list after sending them message, meanwhile saves tables for them
+Responsibilities:  <br />
+	1. Maintains a guest list  <br />
+	2. Maintains an available table list and a using table list   <br />
+	3. Searches and provides available table id according to guest group size <br />
+	4. Notifies all guests when a table is released  <br />
+	5. Puts guests into a waitingCallBack list after sending them message, meanwhile saves tables for them  <br />
 	6. Updates table status according to guests’ callback message <br />
 Collaborators: Guest
 
 Class: Test <br />
-Responsibilities: 
-	1. Creates Restaurant object
-	2. Creates Guest object
+Responsibilities:   <br />
+	1. Creates Restaurant object  <br />
+	2. Creates Guest object  <br />
 	3. Creates a test case for testing <br />
 COllaborators: Guest, Restaurant
 	
