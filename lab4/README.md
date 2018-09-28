@@ -3,6 +3,7 @@ I use observer pattern to design the waitlist system of Din Tai Fung Restaurant.
 The observer pattern defines Restaurant class as the child of ConcreteSubject Class, which implements Subject interface, and defines Guest class as the child of ConcreteObserver Class, which implements Observer interface.
 
 CRC Card (I attached CRC Card image in the folder) :
+
 Class: Guest
 Responsibilities: 
 	1. Gets name, phone number, and group size of guest
