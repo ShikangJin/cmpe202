@@ -1,5 +1,3 @@
-package lab6 ;
-
 import java.util.* ;
 
 public class Receipt implements Ticket {
@@ -41,7 +39,7 @@ public class Receipt implements Ticket {
 
 	@Override
 	public void print(String time, String number) {
-		System.out.println(this.getClass());
+		System.out.println(center(maxText, this.getClass().getName()));
 		System.out.println("========================================\n");
 		System.out.println(center(maxText, "FIVE GUYS"));
 		System.out.println(center(maxText, "BURGERS AND FRIES"));
@@ -65,10 +63,10 @@ public class Receipt implements Ticket {
 		int padding = maxText - left.length() - right.length();
 		res += left;
 		for (int i = 0; i < padding; i++) {
-			order += " ";
+			res += " ";
 		}
-		order += right;
-		return order;
+		res += right;
+		return res;
 	}
 
 	private String center(int maxText,  String str) {

@@ -1,5 +1,3 @@
-package lab6 ;
-
 import java.util.* ;
 
 public class CustomBurger {
@@ -21,7 +19,7 @@ public class CustomBurger {
 	public String getType() {
 		return this.name;
 	}
-	
+
 	public String getPrice() {
 		return this.price;
 	}

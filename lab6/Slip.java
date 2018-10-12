@@ -1,5 +1,3 @@
-package lab6 ;
-
 import java.util.* ;
 
 public class Slip implements Ticket {
@@ -13,19 +11,22 @@ public class Slip implements Ticket {
 
 	@Override
 	public void add(int number, CustomBurger burger) {
-		order += Integer.toString(number) + "  " + burger.getType();
+		order += Integer.toString(number) + "  " + burger.getType() + "\n";
 		String top = "";
 		String mid = "";
 		String bottom = "";
 		List<Topping> toppings = burger.getToppings();
 		for (Topping topping : toppings) {
 			if (topping.position.equals("top")) {
+				top += "   ";
 				top += topping.name;
 				top += "\n";
 			} else if (topping.position.equals("mid")) {
+				mid += "   ";
 				mid += ("->|" + topping.name);
 				mid += "\n";
 			} else if (topping.position.equals("bottom")) {
+				bottom += "   ";
 				bottom += topping.name;
 				bottom += "\n"; 
 			}
@@ -40,7 +41,7 @@ public class Slip implements Ticket {
 
 	@Override
 	public void print(String time, String number) {
-		System.out.println(this.getClass());
+		System.out.println(center(maxText, this.getClass().getName()));
 		System.out.println("========================================\n");
 		System.out.println("Order Number: " + number);
 		System.out.println(center(maxText, time));

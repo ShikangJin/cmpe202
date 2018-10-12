@@ -1,5 +1,3 @@
-package lab6 ;
-
 import java.util.* ;
 
 public class FrontDesk {
@@ -32,6 +30,7 @@ public class FrontDesk {
 	public void printTicket(String time, String number) {
 		for (Ticket ticket : list) {
 			ticket.print(time, number);
+			System.out.println("\n\n");
 		}
 	}
 

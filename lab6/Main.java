@@ -1,5 +1,3 @@
-package lab6 ;
-
 import java.util.* ;
 
 public class Main {

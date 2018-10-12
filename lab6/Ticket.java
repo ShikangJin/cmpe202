@@ -1,5 +1,3 @@
-package lab6 ;
-
 public interface Ticket {
 	
 	public void add(int number, CustomBurger burger);
