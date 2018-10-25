@@ -5,14 +5,11 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 {
 
 	private IKeyEventHandler nextHandler ;
-	private String month = "", date = "";
+	private String month = "", year = "";
 	private App app;
-	private Set<String> largeMonthes, smallMonthes;
 
 	public CreditCardExp(App app) {
 		this.app = app;
-		largeMonthes = new HashSet<>(Arrays.asList("01", "03", "05", "07", "08", "10", "12"));
-		smallMonthes = new HashSet<>(Arrays.asList("04", "06", "09", "11"));
 	}
 
     public void setNext( IKeyEventHandler next) {
@@ -20,15 +17,15 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
     }	
 
 	public String display() {
-		if ( month.equals("") && date.equals("") )
+		if ( month.equals("") && year.equals("") )
 			return "[MM/YY]" + "  " ;
 		else {
 			StringBuilder sb = new StringBuilder();
 			sb.append("[");
 			sb.append(month);
-			if (!date.equals("")) {
+			if (!year.equals("")) {
 				sb.append("/");
-				sb.append(date);
+				sb.append(year);
 			}
 			sb.append("]");
 			return sb.toString() + "  " ;
@@ -42,7 +39,7 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 			} else if (month.length() < 2) {
 				monthHandler(ch, cnt);
 			} else {
-				dateHandler(ch, cnt);
+				yearHandler(ch, cnt);
 			}
 		}
 		else if ( nextHandler != null )
@@ -55,10 +52,10 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 
 	private void deleteHandler() {
 		StringBuilder sb;
-		if (date.length() > 0) {
-			sb = new StringBuilder(date);
+		if (year.length() > 0) {
+			sb = new StringBuilder(year);
 			sb.deleteCharAt(sb.length() - 1);
-			date = sb.toString();
+			year = sb.toString();
 		} else if (month.length() > 0) {
 			sb = new StringBuilder(month);
 			sb.deleteCharAt(sb.length() - 1);
@@ -86,27 +83,10 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 		month = sb.toString();
 	}
 
-	private void dateHandler(char ch, int cnt) {
-		StringBuilder sb = new StringBuilder(date);
-		int curNum = ch - 48;
-		if (date.length() == 0) {
-			if ((month.equals("02") && curNum > 2) || curNum > 3 ) {
-				app.addOneCount();
-				sb.append('0');
-			} 
-			sb.append(ch);		
-		} else if (sb.charAt(sb.length() - 1) - 48 < 3) {
-			sb.append(ch);
-		} else {
-			if ((curNum > 1 && largeMonthes.contains(month)) 
-				|| (curNum > 0 && smallMonthes.contains(month))) {
-				autoComplete(sb);
-				nextHandler.key(ch, cnt + 1);
-			} else {
-				sb.append(ch);
-			}
-		}
-		date = sb.toString();
+	private void yearHandler(char ch, int cnt) {
+		StringBuilder sb = new StringBuilder(year);	
+		sb.append(ch);
+		year = sb.toString();
 	}
 
 	private void autoComplete(StringBuilder sb) {
