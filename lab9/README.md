@@ -1,4 +1,4 @@
-#Summary
+# Summary
 
 In this lab, I implement chain_of_responsibliity pattern by using lambda expression. Lambda expression implements the abstruct function of functional interfaces. By setting funtional interface, we can easily implement the interface with the parameters and return type that we want. 
 <br>
