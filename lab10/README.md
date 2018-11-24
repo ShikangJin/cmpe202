@@ -1,0 +1,5 @@
+# LAB #10- AspectJ & Feature IDE
+The purpose of this lab is to compare the AspectJ & Feature IDE solution for Gumball Machine problem with the original JAVA solution. <br>
+The original JAVA solution from Lab #1 used Factory Pattern by creating a Gumball Machine Factory Interface, and implementing it with three different types of Gumball Machine Factory. For each Gumball Machine Factory, it contained cost and required coin type variables to satisfy the requirement, and in the Main class, users need to select one Gumball Machine Factory to create a Gumball Machine, then use it.<br>
+Compare with the original JAVA solution, the AspectJ & Feature IDE solution creates a model for Gumball Machine problem. The model defines all possible configurations for the problem, where each configuration represents a type of Gumball Machine.<br>
+![alt text](https://github.com/ShikangJin/cmpe202/tree/master/lab10/GumballMachineModel "Gumall Machine Model") 
